@@ -1,13 +1,6 @@
 import * as Yup from 'yup';
-import Client from '../models/Client';
 
-const validationSchema = Yup.object().shape({
-  nome: Yup.string().required(),
-  email: Yup.string()
-    .email()
-    .required(),
-  dataDeNascimento: Yup.date().required(),
-});
+import Client from '../models/Client';
 
 // index, show, store, update, destoy
 class ClientController {
@@ -21,7 +14,11 @@ class ClientController {
       offset,
     });
 
-    return res.json(clients);
+    clients.rows = clients.rows.map(client =>
+      client.parseObjectToResponse(client)
+    );
+
+    return res.json({ total: clients.count, lista: clients.rows });
   }
 
   async show(req, res) {
@@ -33,10 +30,18 @@ class ClientController {
       return res.status(400).json({ error: 'Cliente não cadastrado' });
     }
 
-    return res.json(client);
+    return res.json(client.parseObjectToResponse(client));
   }
 
   async store(req, res) {
+    const validationSchema = Yup.object().shape({
+      nome: Yup.string().required(),
+      email: Yup.string()
+        .email()
+        .required(),
+      dataDeNascimento: Yup.date().required(),
+    });
+
     if (!(await validationSchema.isValid(req.body))) {
       return res.status(400).json({ error: 'Falha na validação dos campos' });
     }
@@ -51,12 +56,18 @@ class ClientController {
         .json({ error: 'Cliente já existe, email deve ser único' });
     }
 
-    const { id, nome, email, dataDeNascimento } = await Client.create(req.body);
+    const client = await Client.create(req.body);
 
-    return res.json({ id, nome, email, dataDeNascimento });
+    return res.json(client.parseObjectToResponse(client));
   }
 
   async update(req, res) {
+    const validationSchema = Yup.object().shape({
+      nome: Yup.string(),
+      email: Yup.string().email(),
+      dataDeNascimento: Yup.date(),
+    });
+
     if (!(await validationSchema.isValid(req.body))) {
       return res.status(400).json({ error: 'Falha na validação dos campos' });
     }
@@ -80,15 +91,19 @@ class ClientController {
       }
     }
 
-    const { nome, dataDeNascimento } = await client.update(req.body);
-
-    return res.json({ id, email, nome, dataDeNascimento });
+    const clientUpdated = await client.update(req.body);
+    return res.json(clientUpdated.parseObjectToResponse(clientUpdated));
   }
 
   async destroy(req, res) {
     const { id } = req.params;
 
-    await Client.destroy({ where: { id } });
+    const client = await Client.findByPk(id);
+    if (!client) {
+      return res.status(400).json({ error: 'Cliente não cadastrado' });
+    }
+
+    await client.destroy();
 
     return res.status(200).json();
   }

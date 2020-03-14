@@ -1,4 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
+import dateFormat from 'date-fns/format';
 
 class Client extends Model {
   static init(sequelize) {
@@ -10,6 +11,13 @@ class Client extends Model {
       },
       { sequelize }
     );
+  }
+
+  parseObjectToResponse(client) {
+    const { id, nome, email, dataDeNascimento } = client;
+    const birthDateFormat = dateFormat(dataDeNascimento, 'dd/MM/yyyy');
+
+    return { id, nome, email, dataDeNascimento: birthDateFormat };
   }
 }
 
