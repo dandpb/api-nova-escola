@@ -24,9 +24,6 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 
-#criar db no mysql
-create database api_nova_escola_db
-
 # Clone this repository
 $ git clone https://github.com/dandpb/apiNovaEscola
 
@@ -36,10 +33,19 @@ $ cd apiNovaEscola
 # Install dependencies
 $ yarn install
 
+#criar db no mysql
+create database api_nova_escola_db;
+
+#rodar migrations
+yarn sequelize db:migrate
+
 # Run the app
 $ yarn dev
 
 ```
+## :memo: Como testar as request's
+Usar o Insomnia, importar o workspace pegando o arquivo 'insomnia_api_nova_escola.json' na raiz do projeto
+
 
 ## :memo: Licença
 
