@@ -50,7 +50,7 @@ Usar o Insomnia, importar o workspace pegando o arquivo 'insomnia_api_nova_escol
 
 
 ## :memo: Integração continua
-A integração continua foi feita usando o serviço do https://buddy.works/ . Toda vez que acontece um push na branch 'master', acontece o Build e Deploy na api hospedada no endereço http://novaescola.dbarreto.com.br/api/
+A integração continua foi feita usando o serviço do https://buddy.works/ . Toda vez que acontece um push na branch 'master', acontece o Build e Deploy na api hospedada no endereço http://novaescola.dbarreto.com.br/api/ . Ao termino do pipeline recebo uma notificação por email.
 
 
 ## :memo: Licença

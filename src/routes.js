@@ -3,6 +3,8 @@ import ClientController from './app/controllers/ClientController';
 
 const routes = new Router();
 
+routes.get('/', (req, res) => res.send('ok'));
+
 routes.post('/cliente', ClientController.store);
 routes.get('/cliente', ClientController.index);
 routes.get('/cliente/:id', ClientController.show);
