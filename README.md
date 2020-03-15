@@ -1,4 +1,4 @@
-# apiNovaEscola
+# Api NovaEscola
 
 ## :information_source: Principais objetivos do projeto:
 
@@ -49,9 +49,9 @@ $ yarn dev:debugger
 
 ```
 ## :memo: Como testar as request's
-Usar o Insomnia, importar o workspace pegando o arquivo 'insomnia_api_nova_escola.json' na raiz do projeto para testar localmente.
+Usar o [Insomnia](https://insomnia.rest/), importar o workspace pegando o arquivo 'insomnia_api_nova_escola.json' na raiz do projeto para testar localmente.
 
-Usar o Insomnia, importar o workspace pegando o arquivo 'insomnia_api_nova_escola_servidor_externo.json' na raiz do projeto para testar externamente. A api está hospedada no endereço http://novaescola.dbarreto.com.br/api/
+Usar o [Insomnia](https://insomnia.rest/), importar o workspace pegando o arquivo 'insomnia_api_nova_escola_servidor_externo.json' na raiz do projeto para testar externamente. A api está hospedada no endereço http://novaescola.dbarreto.com.br/api/
 
 
 ## :memo: Integração continua
