@@ -49,6 +49,9 @@ Usar o Insomnia, importar o workspace pegando o arquivo 'insomnia_api_nova_escol
 Usar o Insomnia, importar o workspace pegando o arquivo 'insomnia_api_nova_escola_servidor_externo.json' na raiz do projeto para testar externamente. A api está hospedada no endereço http://novaescola.dbarreto.com.br/api/
 
 
+## :memo: Integração continua
+A integração continua foi feita usando o serviço do https://buddy.works/ . Toda vez que acontece um push na branch 'master', acontece o Build e Deploy na api hospedada no endereço http://novaescola.dbarreto.com.br/api/
+
 
 ## :memo: Licença
 
