@@ -44,7 +44,10 @@ $ yarn dev
 
 ```
 ## :memo: Como testar as request's
-Usar o Insomnia, importar o workspace pegando o arquivo 'insomnia_api_nova_escola.json' na raiz do projeto
+Usar o Insomnia, importar o workspace pegando o arquivo 'insomnia_api_nova_escola.json' na raiz do projeto para testar localmente.
+
+Usar o Insomnia, importar o workspace pegando o arquivo 'insomnia_api_nova_escola_servidor_externo.json' na raiz do projeto para testar externamente. A api está hospedada no endereço http://134.122.123.128:3333/
+
 
 
 ## :memo: Licença
