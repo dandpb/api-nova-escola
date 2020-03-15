@@ -1,9 +1,8 @@
 # apiNovaEscola
 
-Principais objetivos do projeto:
+## :information_source: Principais objetivos do projeto:
 
-BACKEND
-Fazer um CRUD clássico para Cliente com as funcionalidades abaixo:
+Fazer BACKEND de um CRUD clássico para Cliente com as funcionalidades abaixo:
 - Cadastro do cliente
 - Listagem do cliente
 - Detalhamento do cliente
@@ -11,12 +10,13 @@ Fazer um CRUD clássico para Cliente com as funcionalidades abaixo:
 - Remoção do cliente
 
 
-## :rocket: Technologies
+## :rocket: Tecnologias
 
-This project was developed at the nova escola changele with the following technologies:
-
+Esse projeto foi desenvolvido para o desafio da Nova Escola com as tecnologias a seguir:
 -  [NodeJS](https://nodejs.org/)
-5.7.19 MySQL Community Server
+-  [MySQL Community Server 5.7](https://www.mysql.com/products/community/)
+-  [Digital Ocian Cloud](https://www.digitalocean.com/)
+-  [Buddy CI/CD](https://buddy.works)
 
 ## :information_source: How To Use
 
@@ -30,17 +30,22 @@ $ git clone https://github.com/dandpb/apiNovaEscola
 # Go into the repository
 $ cd apiNovaEscola
 
-# Install dependencies
+# instalar dependências
 $ yarn install
 
-#criar db no mysql
+#criar o banco de dados no mysql
 create database api_nova_escola_db;
 
 #rodar migrations
 yarn sequelize db:migrate
 
-# Run the app
+# rodar a aplicação
 $ yarn dev
+
+# rodar a aplicação no modo de debugger
+$ yarn dev:debugger
+
+
 
 ```
 ## :memo: Como testar as request's
