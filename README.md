@@ -55,7 +55,13 @@ Usar o [Insomnia](https://insomnia.rest/), importar o workspace pegando o arquiv
 
 
 ## :memo: Integração continua
-A integração continua foi feita usando o serviço do https://buddy.works/ . Toda vez que acontece um push na branch 'master', acontece o Build e Deploy na api hospedada no endereço http://novaescola.dbarreto.com.br/api/ . Ao termino do pipeline recebo uma notificação por email.
+A integração continua foi feita usando o serviço do https://buddy.works/ . Toda vez que acontece um push na branch 'master', os passos a seguir são executados:
+- os testes são rodados.
+- a ultima versão do repositório é baixada.
+- acontece o Build e Deploy na api hospedada no endereço http://novaescola.dbarreto.com.br/api/.
+- notificação por email.
+
+Caso algum passo falhe, o pipeline é interrompido
 
 
 ## :memo: Licença
